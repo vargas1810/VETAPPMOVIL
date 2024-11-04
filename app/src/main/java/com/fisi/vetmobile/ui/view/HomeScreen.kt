@@ -1,8 +1,22 @@
 package com.fisi.vetmobile.ui.view
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.fisi.vetmobile.R
 import com.fisi.vetmobile.ui.components.SysVitaTopBar
 import com.fisi.vetmobile.ui.theme.VetMobileTheme
 
@@ -17,8 +31,6 @@ fun HomeScreen(onLoginClick: () -> Unit) {
         )
     }, bottomBar = {
         BottomAppBar(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.primary,
             modifier = Modifier.size(height = 55.dp, width = 395.dp)
         ) {
 
@@ -32,15 +44,15 @@ fun HomeScreen(onLoginClick: () -> Unit) {
         ) {
             Text(
                 modifier = Modifier.padding(top = 36.dp, bottom = 36.dp),
-                text = "SysVita",
+                text = "VetMobile",
                 fontSize = 40.sp,
                 fontWeight = FontWeight.Bold
             )
 
-            val imagePainter = painterResource(id = R.drawable.sysvita_launcher_foreground)
+            val imagePainter = painterResource(id = R.drawable.vet_launcher_foreground)
             Image(
                 painter = imagePainter,
-                contentDescription = "Icono Sysvita",
+                contentDescription = "Icono VetMobile",
                 modifier = Modifier.size(100.dp)
             )
 
@@ -53,15 +65,6 @@ fun HomeScreen(onLoginClick: () -> Unit) {
                 Text("Usuario", fontSize = 17.sp)
             }
 
-
-            FilledTonalButton(
-                onClick = onLoginClick,
-                modifier = Modifier.size(width = 200.dp, height = 40.dp)
-            ) {
-                Text("Especialista", fontSize = 17.sp)
-            }
-
-
         }
     }
 
@@ -70,7 +73,7 @@ fun HomeScreen(onLoginClick: () -> Unit) {
 @Preview
 @Composable
 fun PreviewLayout() {
-    VetMobileTheme(darkTheme = false) {
+    VetMobileTheme(darkTheme = true) {
         HomeScreen(onLoginClick = {})
     }
 }

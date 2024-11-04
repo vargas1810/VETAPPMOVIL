@@ -1,5 +1,8 @@
 package com.fisi.vetmobile.network
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
 @Serializable
 data class LoginResponse(
     @SerialName("access_token")
