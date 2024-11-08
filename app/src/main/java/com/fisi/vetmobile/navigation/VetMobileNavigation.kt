@@ -17,7 +17,7 @@ fun VetMobileApp(
     loginViewModel: LoginViewModel = viewModel()
 ) {
     NavHost(
-        navController = navController,
+        navController = navController ,
         startDestination = VetMobileScreen.Home.name,
     ) {
         composable(route = VetMobileScreen.Home.name) {
